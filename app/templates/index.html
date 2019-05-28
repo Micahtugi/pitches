@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block styles%}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div style = " background-image: url(https://static1.squarespace.com/static/53afbf73e4b07a4f0118535c/t/5408046de4b0053aba2e36f4/1547442238137/?format=1500w); background-size:cover;background-color:yellow;background-attachment: fixed; ">
+    <div class="container" style="font-family: 'Russo One', sans-serif;" style="text-align: center;">
+      <div class="row">
+        <h4 class="text-left"><a class="btn btn-success" href="/add/category">  Add a Pitch Category </a></h4>
+
+          <div class='jumbotron' style='opacity:0.8;'>{{ macro.displayCategoryList(categories) }}</div>
+          <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        </div>
+    </div>
+
+{% endblock %}
+{% macro displayPitches(pitch_list) %}
+  {% for pitches in pitch_list %}
+    <div class="col-md-6">
+      <div class="well">
+        <div class="row">
+          <div class="col-md-6">
+              <h3>{{pitches.content}}</h3>
+          </div>
+          <div class="col-md-6">
+            <p>POSTED: {{pitches.date_posted.strftime('%Y/%m/%d || %r')}}</p>
+            <a href="/pitch/{{pitches.id}}"><h4>COMMENT</h4></a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+    
+  {% endfor %}
+{% endmacro %}
+
+
+  
