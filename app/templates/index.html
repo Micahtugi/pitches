@@ -6,10 +6,11 @@
 {% endblock %}
 {% block content %}
 
-<div style = " background-size:cover;background-color:grey;background-attachment: fixed; ">
-    <div class="container" style="font-family: 'Lato', rubik;" style="text-align: center;">
+<div style="color:white; background-image: url(https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size: cover; background-repeat: no-repeat;">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <div class="container" style="font-family: 'Indie Flower', cursive;" style="text-align: center;">
       <div class="row">
-        <h4 class="text-left"><a class="btn btn-success" href="/add/category">  Add a Pitch Category </a></h4>
+        <h4 class="text-left" ><a class="btn btn-success" href="/add/category">  Add a Pitch Category </a></h4>
 
           <div class='jumbotron' style='opacity:0.9;'>{{ macro.displayCategoryList(categories) }}</div>
           <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
