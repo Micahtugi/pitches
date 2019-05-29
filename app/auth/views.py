@@ -9,7 +9,7 @@ from ..email import mail_message
 
 
 # registration route
-@auth.route('templates/auth/reqister',methods=['GET','POST'])
+@auth.route('templates/auth/reqister',methods=["GET","POST"])
 def register():
     '''
     function that registers the users
@@ -20,6 +20,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         
+        mail_message("Welcome to pitches","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('auth.login'))
     title="Registration"
